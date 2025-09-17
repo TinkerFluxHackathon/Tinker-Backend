@@ -11,4 +11,4 @@ class Produto(models.Model):
     # nota = models.IntegerChoices(1,5)
 
     def __str__(self):
-        return f'{self.nome} - {self.preco}'
+        return f'{self.nome} - {self.preco:,.2f}'.replace('.', ',')
