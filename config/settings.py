@@ -1,5 +1,4 @@
-
-
+from corsheaders.defaults import default_methods, default_headers
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%8aqsv45u1eq05c%!=3@-!u@6qc3q+i62vdey&me)6tcgs!f3r'
@@ -16,9 +15,11 @@ INSTALLED_APPS = [
     'usuario',
     'produtos',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -79,3 +80,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173"
+]
+
+SEASSION_COOKIE_SAMESITE = "None"
+SEASSION_COOKIE_SECURE = True
+
+CORS_ALLOW_METHODS = (*default_methods, "PUT", "PATCH")
+CORS_ALLOW_HEADERS = (*default_headers, "my-custom-header")
+CORS_PREFLIGHT_MAX_AGE = 86400
