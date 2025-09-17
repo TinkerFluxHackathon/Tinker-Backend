@@ -12,7 +12,7 @@ router.register(r'usuario', UsuarioViewset)
 router.register(r'comentario', ComentarioViewset)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
 
