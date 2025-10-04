@@ -6,7 +6,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    "tinkerfluxhackathon.github.io/Tinker-Backend"
+    "tinker-backend-on5j.onrender.com"
 ]
 
 INSTALLED_APPS = [
