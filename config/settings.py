@@ -3,7 +3,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%8aqsv45u1eq05c%!=3@-!u@6qc3q+i62vdey&me)6tcgs!f3r'
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "https://tinkerfluxhackathon.github.io/Tinker-Backend/"
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,9 +24,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -84,17 +88,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://tinkerfluxhackathon.github.io/Tinker-Backend/",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "htps://localhost:5173/produtos/"
+    "https:"
 ]
 
 SEASSION_COOKIE_SAMESITE = "None"
 SEASSION_COOKIE_SECURE = True
 
-CORS_ALLOW_METHODS = (*default_methods, "PUT", "PATCH")
-CORS_ALLOW_HEADERS = (*default_headers, "my-custom-header")
-CORS_PREFLIGHT_MAX_AGE = 86400
+CORS_ALLOW_ALL_ORIGINS = True
+
+
