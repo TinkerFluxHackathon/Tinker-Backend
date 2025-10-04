@@ -85,20 +85,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://tinkerfluxhackathon.github.io/Tinker-Backend",
-]
-
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-]
-
-SEASSION_COOKIE_SAMESITE = "None"
-SEASSION_COOKIE_SECURE = True
+SEASION_COOKIE_SAMESITE = "None"
+SEASION_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
