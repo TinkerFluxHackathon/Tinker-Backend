@@ -96,7 +96,6 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "htps://localhost:5173/produtos/"
-    "https:"
 ]
 
 SEASSION_COOKIE_SAMESITE = "None"
