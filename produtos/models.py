@@ -7,8 +7,6 @@ class Produto(models.Model):
     descricao = models.TextField(max_length=2000, default="Descrição não informada")
     fotoPrincipal = models.ImageField(upload_to='media/produtos/', null = True)
     fotoSecundaria = models.ImageField(upload_to='media/produtos/', null = True)
-    fotoTerciaria = models.ImageField(upload_to='media/produtos/', null = True)
-    # nota = models.IntegerChoices(1,5)
 
     def __str__(self):
         return f'{self.nome} - {self.preco:,.2f}'.replace('.', ',')
