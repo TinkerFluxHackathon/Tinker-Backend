@@ -97,7 +97,7 @@ SEASION_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-DEBUG = True
+DEBUG = False
 
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
