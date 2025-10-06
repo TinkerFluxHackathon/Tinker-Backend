@@ -5,7 +5,6 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%8aqsv45u1eq05c%!=3@-!u@6qc3q+i62vdey&me)6tcgs!f3r'
-DEBUG = True
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
@@ -84,8 +83,6 @@ USE_I18N = True
 
 USE_TZ = True
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -99,4 +96,8 @@ SEASION_COOKIE_SECURE = True
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+DEBUG = True
 
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
