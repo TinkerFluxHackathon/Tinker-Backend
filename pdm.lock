@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:c6a49c19a0de931e380e92bb3b4b000e59daea1946998eecc96dc7532dc8da59"
+content_hash = "sha256:3578af2ad596fb832adf1968a47c50159a4adc19746da65a844b83d5f90afd7f"
 
 [[metadata.targets]]
 requires_python = ">=3.10,<=3.14"
@@ -39,7 +39,7 @@ files = [
 
 [[package]]
 name = "django"
-version = "5.2.7"
+version = "5.2.10"
 requires_python = ">=3.10"
 summary = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 groups = ["default"]
@@ -49,8 +49,8 @@ dependencies = [
     "tzdata; sys_platform == \"win32\"",
 ]
 files = [
-    {file = "django-5.2.7-py3-none-any.whl", hash = "sha256:59a13a6515f787dec9d97a0438cd2efac78c8aca1c80025244b0fe507fe0754b"},
-    {file = "django-5.2.7.tar.gz", hash = "sha256:e0f6f12e2551b1716a95a63a1366ca91bbcd7be059862c1b18f989b1da356cdd"},
+    {file = "django-5.2.10-py3-none-any.whl", hash = "sha256:cf85067a64250c95d5f9067b056c5eaa80591929f7e16fbcd997746e40d6c45c"},
+    {file = "django-5.2.10.tar.gz", hash = "sha256:74df100784c288c50a2b5cad59631d71214f40f72051d5af3fdf220c20bdbbbe"},
 ]
 
 [[package]]
@@ -66,6 +66,20 @@ dependencies = [
 files = [
     {file = "django_cors_headers-4.9.0-py3-none-any.whl", hash = "sha256:15c7f20727f90044dcee2216a9fd7303741a864865f0c3657e28b7056f61b449"},
     {file = "django_cors_headers-4.9.0.tar.gz", hash = "sha256:fe5d7cb59fdc2c8c646ce84b727ac2bca8912a247e6e68e1fb507372178e59e8"},
+]
+
+[[package]]
+name = "django-phonenumber-field"
+version = "8.4.0"
+requires_python = ">=3.10"
+summary = "An international phone number field for django models."
+groups = ["default"]
+dependencies = [
+    "Django>=4.2",
+]
+files = [
+    {file = "django_phonenumber_field-8.4.0-py3-none-any.whl", hash = "sha256:7a1cb3a6456edb54d879f11ffa0acb227ded08c93b587035d0f28093f0e46511"},
+    {file = "django_phonenumber_field-8.4.0.tar.gz", hash = "sha256:2b83e843dac35eec6a69880a166487235b737a71a1e38c9a52e5ad67d6996083"},
 ]
 
 [[package]]
@@ -106,6 +120,17 @@ groups = ["default"]
 files = [
     {file = "packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"},
     {file = "packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"},
+]
+
+[[package]]
+name = "phonenumbers"
+version = "9.0.22"
+requires_python = ">=2.5"
+summary = "Python version of Google's common library for parsing, formatting, storing and validating international phone numbers."
+groups = ["default"]
+files = [
+    {file = "phonenumbers-9.0.22-py2.py3-none-any.whl", hash = "sha256:645e66cd9a136b3b257b5f941fa97d324124114d31ad3c9f2488682f47ad7ee1"},
+    {file = "phonenumbers-9.0.22.tar.gz", hash = "sha256:eff985c65575749d1d54e07c56c3517d5243e03e08e4a6191761df9aab2278f2"},
 ]
 
 [[package]]
