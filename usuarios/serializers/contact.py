@@ -1,10 +1,5 @@
 from rest_framework.serializers import ModelSerializer;
-from .models import User, Contact;
-
-class UserSerializer(ModelSerializer):
-    class Meta:
-        model = User;
-        fields = '__all__';
+from usuarios.models.contact import Contact;
 
 class ContactSerializer(ModelSerializer):
     class Meta:
