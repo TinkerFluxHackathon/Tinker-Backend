@@ -3,14 +3,14 @@ from usuarios.models import User;
 from django.core.validators import MinValueValidator, MaxValueValidator;
 
 class Product(models.Model):
-    name_pro = models.CharField(max_length=100, null=False, blank=False);
-    description_pro = models.CharField(max_length=1500, null=False, blank=False);
-    price_pro = models.DecimalField(max_digits=5, decimal_places=2);
-    image_pro = models.ImageField(null=False, blank=False);
-    shortDescription_pro = models.CharField(max_length=200, null=False, blank=False);
+    name = models.CharField(max_length=100, null=False, blank=False);
+    description = models.CharField(max_length=1500, null=False, blank=False);
+    price = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False);
+    image = models.ImageField(null=False, blank=False);
+    shortDescription = models.CharField(max_length=200, null=False, blank=False);
     # score = 
     def __str__(self):
-        return f'{self.name_pro}';
+        return self.name;
 
     def averageScore(self):
         evaluation = self.evaluation.all();
@@ -35,13 +35,20 @@ class Evaluation(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT);
 
     def __str__(self):
-        return f"{self.user}";
+        return self.user;
 
 class Coupon(models.Model):
-    name_cup = models.CharField(max_length=20, null=False, blank=False);
-    value_cup = models.DecimalField(max_digits=5, decimal_places=2, null=False, blank=False);
+    name = models.CharField(max_length=20, null=False, blank=False);
+    value = models.DecimalField(max_digits=5, decimal_places=2, default=0, null=False, blank=False);
 
     def __str__(self):
-        return f"{self.name_cup}";
+        return self.name_cup;
 
-# Finalizar tabela Compras e ItensCarrinho
+class Purchase(models.Model):
+    qrCode = models.CharField(max_length=200, null=False, blank=False);
+    user = models.ForeignKey(User, on_delete=models.PROTECT);
+    value = models.DecimalField(max_digits=10, decimal_places=2, default=0, null=False, blank=False);
+
+    def __str__(self):
+        return self.user;
+
